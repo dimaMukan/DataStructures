@@ -1,7 +1,7 @@
-def second_outer(par):
+def second_outer(*bargs,**bkwargs):
     def outer(func):
         def inner(*args, **kwargs):
-            print(par)
+            print(*bargs,**bkwargs)
             return func(*args, **kwargs)
         return inner
     return outer
