@@ -6,12 +6,12 @@ def outer(*args,**kwargs):
                 try:
                     return func(*dargs,**dkwargs)
                 except Exception as err:
-                    print("Error",err)
+                    print(f"Error: {err}, attempts: {attempts}")
                     attempts -= 1
         return inner
     return second_outer
 
-@outer(attempts=5)
+@outer(attempts=50)
 def div(a,b):
     return a/b
 
